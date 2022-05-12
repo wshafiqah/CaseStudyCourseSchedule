@@ -9,10 +9,10 @@ Name & Matric No.:
 Assigned tasks:
 - Mapping: Afiqah
 - Match: Shafiqah & Afiqah
-- Add subject:
-- Display subject:
-- Drop subject:
-- Update schedule:
+- Add subject: Shafiqah & Afiqah
+- Display subject: Afiqah
+- Drop subject: Shafiqah
+- Update schedule: Afiqah
 
 Brief Description:
 The course schedule should be able to display each subject in each allocated slots. The idea is to display list of subjects, the user able to add the subject in the schedule, the schedule will be updated and lastly updated the list of subject the user choose.  
