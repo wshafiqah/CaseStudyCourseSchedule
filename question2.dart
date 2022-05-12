@@ -32,7 +32,7 @@ void main() {
     print("2. Add the subject");
     print("3. Drop the subject");
     print("4. Display the schedule");
-    print("5. Exit");
+    print("5. Exit\n");
     stdout.write("Enter your choice: ");
     int input = int.parse(stdin.readLineSync()!);
     if (input == 1) {
@@ -54,33 +54,33 @@ void main() {
 }
 void displaySubject() {
  
-var orderLines = <Map>[]; // creates an empty List<Map>
-orderLines.add({ 'Course Code'  : 'INFO 4501',
+var subjectDetail = <Map>[]; // creates an empty List<Map>
+subjectDetail.add({ 'Course Code'  : 'INFO 4501',
               'Subject' : 'IT AND ISLAM',
               'Section' : 1,
               'Day'  : 'M-W',
               'Time' : '1000-1120'
              });
-orderLines.add({ 'Course Code'  : 'INFO 4501',
+subjectDetail.add({ 'Course Code'  : 'INFO 4501',
               'Subject' : 'IT AND ISLAM',
               'Section' : 2,
               'Day'  : 'T-TH',
               'Time' : '1400-1520'
              });
 
-orderLines.add({ 'Course Code'  : 'INFO 3102',
+subjectDetail.add({ 'Course Code'  : 'INFO 3102',
               'Subject' : 'DATA WAREHOUSING',
               'Section' : 1,
               'Day'  : 'M-W',
               'Time' : '830-950'
              });
-orderLines.add({ 'Course Code'  : 'INFO 3102',
+subjectDetail.add({ 'Course Code'  : 'INFO 3102',
               'Subject' : 'DATA WAREHOUSING',
               'Section' : 2,
               'Day'  : 'T-TH',
               'Time' : '1130-1250'
              });       
-orderLines.add({ 'Course Code'  : 'INFO 3102',
+subjectDetail.add({ 'Course Code'  : 'INFO 3102',
               'Subject' : 'DATA WAREHOUSING',
               'Section' : 3,
               'Day'  : 'T-TH',
@@ -89,7 +89,7 @@ orderLines.add({ 'Course Code'  : 'INFO 3102',
 
 
 print("\nThe list of Subject");
-orderLines.forEach(print);
+subjectDetail.forEach(print);
 print('\n');
 
 
@@ -100,13 +100,15 @@ void addSubject(int currentId, List<Subject> items) {
   var newSubject = Subject(currentId, input);
   items.add(newSubject);
 
+  print('$input is already added to your schedule');
+
   
 }
 void dropSubject(int currentId, List<Subject> items) {
   stdout.write("Enter the course code: ");
   String input = stdin.readLineSync()!;
   var newSubject = Schedule(currentId, input);
-  items.remove(newSubject);
+  items.remove(newSubject == input);
 }
 
 void displayAllItem(List<Subject> items) {
