@@ -19,21 +19,6 @@ class Schedule {
     this.courseCode = courseCode;
   
   }
-  void addItem(Subject addedItem) {
-    var existed = false;
-    this.items.forEach((Subject item) {
-      if (item.id == addedItem.id) {
-        existed = true;
-      }
-    });
-    if (existed) {
-      print('The ${addedItem.courseCode} already exist in ${this.courseCode}');
-    } else {
-      this.items.add(addedItem);
-      print('The ${addedItem.courseCode} was added into ${this.courseCode}');
-    }
-    
-  }
 }
 void main() {
   var currentItemId = 1;
