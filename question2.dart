@@ -3,30 +3,21 @@ import 'dart:io';
 class Subject {
   late int id;
   late String courseCode;
-  late int sec;
-  late DateTime created_at;
-  late DateTime updated_at;
-  Subject(int id, String courseCode, int sec) {
+
+  Subject(int id, String courseCode) {
     this.id = id;
     this.courseCode = courseCode;
-    this.sec = sec;
-    this.created_at = DateTime.now();
-    this.updated_at = DateTime.now();
+    
   }
 }
 class Schedule {
   late int id;
   late String courseCode;
-  late int sec;
-  late DateTime created_at;
-  late DateTime updated_at;
   List<Subject> items = [];
-  Schedule(int id, String courseCode, int sec) {
+  Schedule(int id, String courseCode) {
     this.id = id;
     this.courseCode = courseCode;
-    this.sec = sec;
-    this.created_at = DateTime.now();
-    this.updated_at = DateTime.now();
+  
   }
   void addItem(Subject addedItem) {
     var existed = false;
@@ -41,19 +32,14 @@ class Schedule {
       this.items.add(addedItem);
       print('The ${addedItem.courseCode} was added into ${this.courseCode}');
     }
-    if (existed) {
-      print('The ${addedItem.sec} already exist in ${this.sec}');
-    } else {
-      this.items.add(addedItem);
-      print('The ${addedItem.sec} was added into ${this.sec}');
-    }
+    
   }
 }
 void main() {
   var currentItemId = 1;
-  var currentStorageId = 1;
+  //var currentStorageId = 1;
   List<Subject> subjectList = [];
-  List<Schedule> scheduleList = [];
+  //List<Schedule> scheduleList = [];
   while (true) {
     print("\n\n");
     print("A Course Scheduling System:");
@@ -70,8 +56,8 @@ void main() {
       addSubject(currentItemId, subjectList);
       currentItemId++;
     } else if (input == 3) {
-      createStorage(currentStorageId, scheduleList);
-      currentStorageId++;
+      //createStorage(currentStorageId, scheduleList);
+      //currentStorageId++;
       //addItemToStorage(itemList, storageList);
     } else if (input == 4) {
       displayAllItem(subjectList);
@@ -128,22 +114,19 @@ void addSubject(int currentId, List<Subject> items) {
   String input = stdin.readLineSync()!;
   var newSubject = Subject(currentId, input);
   items.add(newSubject);
+
   
-  stdout.write("Enter the section: ");
-  String section = stdin.readLineSync()!;
-  var newSection= Subject(currentId, section);
-  items.add(newSection);
 }
-void createStorage(int currentId, List<Schedule> schedule) {
+/*void createStorage(int currentId, List<Schedule> schedule) {
   stdout.write("Enter the storage name: ");
   String input = stdin.readLineSync()!;
   var newSchedule = Schedule(currentId, input);
   schedule.add(newSchedule);
-}
+}*/
 
 void displayAllItem(List<Subject> items) {
   print('\n\n');
   items.forEach((Subject item) {
-    print('id: ${item.id}, courseCode: ${item.courseCode}, sec: ${item.sec}');
+    print('id: ${item.id}, courseCode: ${item.courseCode}');
   });
 }
