@@ -56,9 +56,9 @@ void main() {
       addSubject(currentItemId, subjectList);
       currentItemId++;
     } else if (input == 3) {
-      //createStorage(currentStorageId, scheduleList);
-      //currentStorageId++;
-      //addItemToStorage(itemList, storageList);
+      dropSubject(currentItemId, subjectList);
+      currentItemId--;
+      
     } else if (input == 4) {
       displayAllItem(subjectList);
     } else {
@@ -117,12 +117,12 @@ void addSubject(int currentId, List<Subject> items) {
 
   
 }
-/*void createStorage(int currentId, List<Schedule> schedule) {
-  stdout.write("Enter the storage name: ");
+void dropSubject(int currentId, List<Subject> items) {
+  stdout.write("Enter the course code: ");
   String input = stdin.readLineSync()!;
-  var newSchedule = Schedule(currentId, input);
-  schedule.add(newSchedule);
-}*/
+  var newSubject = Schedule(currentId, input);
+  items.remove(newSubject);
+}
 
 void displayAllItem(List<Subject> items) {
   print('\n\n');
