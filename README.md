@@ -7,8 +7,12 @@ Name & Matric No.:
 2. Siti Nor Afiqah binti Mat Hassan (1829714)
 
 Assigned tasks:
-- Mapping
-- Match
+- Mapping: Afiqah
+- Match: Shafiqah & Afiqah
+- Add subject:
+- Display subject:
+- Drop subject:
+- Update schedule:
 
 Brief Description:
 The course schedule should be able to display each subject in each allocated slots. The idea is to display list of subjects, the user able to add the subject in the schedule, the schedule will be updated and lastly updated the list of subject the user choose.  
