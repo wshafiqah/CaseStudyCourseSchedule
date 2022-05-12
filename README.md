@@ -1,6 +1,6 @@
 # CaseStudyCourseSchedule
 
-Group Name: 
+Group Name: pikapika
 
 Name & Matric No.:
 1. Wan Nor Shafiqah binti Wan Ali (1916262)
